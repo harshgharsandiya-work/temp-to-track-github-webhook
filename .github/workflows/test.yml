@@ -1,44 +1,43 @@
 name: Deployment Tracker Test
 
 on:
-push:
-branches:
-- main
-- dev
-pull_request:
-branches:
-- main
-workflow_dispatch:
+    push:
+        branches:
+            - main
+            - dev
+    pull_request:
+        branches:
+            - main
+    workflow_dispatch:
 
 jobs:
-build:
-runs-on: ubuntu-latest
+    build:
+        runs-on: ubuntu-latest
 
-steps:
-  - name: Checkout repository
-    uses: actions/checkout@v4
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
 
-  - name: Start message
-    run: echo "Workflow started"
+            - name: Start message
+              run: echo "Workflow started"
 
-  - name: Simulate install
-    run: |
-      echo "Installing dependencies..."
-      sleep 2
-      echo "Dependencies installed"
+            - name: Simulate install
+              run: |
+                  echo "Installing dependencies..."
+                  sleep 2
+                  echo "Dependencies installed"
 
-  - name: Simulate build
-    run: |
-      echo "Building project..."
-      sleep 2
-      echo "Build finished"
+            - name: Simulate build
+              run: |
+                  echo "Building project..."
+                  sleep 2
+                  echo "Build finished"
 
-  - name: Simulate tests
-    run: |
-      echo "Running tests..."
-      sleep 2
-      echo "Tests passed"
+            - name: Simulate tests
+              run: |
+                  echo "Running tests..."
+                  sleep 2
+                  echo "Tests passed"
 
-  - name: Finish
-    run: echo "Workflow completed successfully"
-
+            - name: Finish
+              run: echo "Workflow completed successfully"
